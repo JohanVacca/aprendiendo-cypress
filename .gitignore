@@ -1,0 +1,11 @@
+.DS_Store
+/node_modules
+cypress/videos/
+cypress/screenshots
+config/dev.env.json
+cypress/example.json
+cypress/fixtures/example.json
+.idea
+.idea/*
+package-lock.json
+multi-reporter-config.json
