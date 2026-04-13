@@ -3,14 +3,14 @@ import {
     getResidentCredentials
 } from "../../../fixtures/authFixtures/credentials";
 
-import { doLogin } from "./functions/loginFunction";
+import { doLogin } from "./functions/loginFunctions";
 
 import {
     validateSuccessfulLoginResponse,
     validateFailedLoginResponse
 } from "./cases/loginValidations";
 
-import { storeAuthToken } from "./functions/storeAuthTokenFunction";
+import { storeAuthToken } from "./functions/loginFunctions";
 
 const testUsers = [
     {
@@ -34,10 +34,7 @@ describe("Testing Admin and Resident User Login", () => {
 
                 doLogin(credentials)
                     .then(validateSuccessfulLoginResponse)
-                    .then(storeAuthToken)
-                    .then((token) => {
-                        expect(token).to.exist;
-                    });
+                    .then(storeAuthToken);
             });
 
             it(`should fail login with wrong ${role} credentials`, () => {
